@@ -1,6 +1,7 @@
-import { restMenuItemImage } from "../../utility/constants";
+// import { restMenuItemImage } from "../../utility/constants";
+import RestItemConainer from "../restItemContainer/RestItemContainer";
 import useRestMenu from "../../utility/useRestMenu";
-import Button from "../button/button";
+// import Button from "../button/button";
 import { useParams } from "react-router-dom";
 import useOnlineStatus from "../../utility/useOnlineStatus";
 import Loader from "../loader/Loader";
@@ -29,7 +30,11 @@ const RestMenu = () => {
     restMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (cate) => cate?.card?.card?.["@type"].includes("ItemCategory")
     );
-
+  // const category = restMenu?.data?.cards.filter((item) => {
+  //   return item?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((cate) =>
+  //     cate?.card?.card?.["@type"].includes("ItemCategory")
+  //   );
+  // });
   if (isOnline === false)
     return (
       <div>
@@ -77,52 +82,51 @@ const RestMenu = () => {
                     </div>
                   </div>
 
-                  {showItems &&
-                    item?.card?.card?.itemCards.map((item) => {
-                      console.log(item);
-                      return (
-                        <div
-                          className="rescard-item-detail"
-                          key={item?.card?.info?.id}
-                        >
-                          <div className="rest-menu-item-detail">
-                            <h2 className="rest-menu-item-name">
-                              {item?.card?.info?.name}
-                            </h2>
-                            <p className="rest-menu-item-price">
-                              ₹
-                              {(item?.card?.info?.price ||
-                                item?.card?.info?.defaultPrice) / 100}
-                            </p>
-                            <p className="rest-menu-item-description">
-                              {item?.card?.info?.description}
-                            </p>
-                          </div>
-                          <div className="rest-menu-item-image">
-                            <img
-                              src={
-                                restMenuItemImage + item?.card?.info?.imageId
-                              }
-                              alt=""
-                            />
-                            <div className="add-to-cart">
-                              <Button
-                                id="add-to-cart-btn"
-                                ButtonText="Add To Cart"
-                                onClick={() => {
-                                  const isLogin = JSON.parse(
-                                    localStorage.getItem("isLogin")
-                                  );
-                                  isLogin
-                                    ? console.log(item?.card?.info?.name)
-                                    : alert("Please Login first");
-                                }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                  {item?.card?.card?.itemCards.map((item) => {
+                    return (
+                      showItems && <RestItemConainer item={item} />
+                      // <div
+                      //   className="rescard-item-detail"
+                      //   key={item?.card?.info?.id}
+                      // >
+                      //   <div className="rest-menu-item-detail">
+                      //     <h2 className="rest-menu-item-name">
+                      //       {item?.card?.info?.name}
+                      //     </h2>
+                      //     <p className="rest-menu-item-price">
+                      //       ₹
+                      //       {(item?.card?.info?.price ||
+                      //         item?.card?.info?.defaultPrice) / 100}
+                      //     </p>
+                      //     <p className="rest-menu-item-description">
+                      //       {item?.card?.info?.description}
+                      //     </p>
+                      //   </div>
+                      //   <div className="rest-menu-item-image">
+                      //     <img
+                      //       src={
+                      //         restMenuItemImage + item?.card?.info?.imageId
+                      //       }
+                      //       alt=""
+                      //     />
+                      //     <div className="add-to-cart">
+                      //       <Button
+                      //         id="add-to-cart-btn"
+                      //         ButtonText="Add To Cart"
+                      //         onClick={() => {
+                      //           const isLogin = JSON.parse(
+                      //             localStorage.getItem("isLogin")
+                      //           );
+                      //           isLogin
+                      //             ? console.log(item?.card?.info?.name)
+                      //             : alert("Please Login first");
+                      //         }}
+                      //       />
+                      //     </div>
+                      //   </div>
+                      // </div>
+                    );
+                  })}
                 </div>
               );
             })}
