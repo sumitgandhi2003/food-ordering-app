@@ -7,13 +7,13 @@ import Loader from "../loader/Loader";
 import "./restmenu.css";
 import { useState } from "react";
 const RestMenu = () => {
-  const { showItems, setShowItems } = useState(false);
+  const [showItems, setShowItems] = useState(false);
   const { restid } = useParams();
   const restMenu = useRestMenu(restid);
   const isOnline = useOnlineStatus();
   let count = 1;
   const handleClick = () => {
-    setShowItems(true);
+    setShowItems(showItems ? false : true);
   };
   const restDetails = restMenu
     ? restMenu?.data.cards.filter((item) =>
@@ -65,7 +65,7 @@ const RestMenu = () => {
               return (
                 <div key={count++} className="rest-menu-items">
                   <div
-                    className="title flex justify-between"
+                    className="title flex justify-between scroll-smooth"
                     onClick={handleClick}
                   >
                     <div className="font-bold text-lg">
