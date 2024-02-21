@@ -1,0 +1,160 @@
+#shimmer-container {
+  width: 100%;
+  height: 100%;
+  animation: blink 1s linear infinite;
+  transition: blink 1s linear;
+}
+#shimmer-nav-bar {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  order: 0.06rem solid black;
+  border-radius: 5px;
+  background-color: rgba(128, 128, 128, 0.252);
+  padding: 10px;
+}
+#shimmer-img {
+  width: 200px;
+  height: 100px;
+  border-radius: 0.3rem;
+  border: 2px solid white;
+}
+#shimmer-nav-link {
+  width: 60%;
+  height: 100px;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#shimmer-nav-link a {
+  margin: 10px;
+  padding: 5px;
+  width: 100px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 0.3rem;
+}
+#shimmer-search {
+  width: 100%;
+  height: 100px;
+  /* background-color: rgba(128, 128, 128, 0.252); */
+  border-radius: 0.3rem;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#shimmer-search #shimmer-input {
+  width: 50%;
+  height: 40px;
+  border-radius: 0.3rem;
+  border: 2ps solid white;
+  background-color: rgba(128, 128, 128, 0.252);
+  padding: 10px;
+}
+#shimmer-btn {
+  margin-left: 20px;
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 0.3rem;
+  outline: none;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.252);
+  cursor: pointer;
+}
+#restroshimmer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#shimmer-card {
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.225);
+  width: 250px;
+  height: 350px;
+  padding: 0.5rem;
+  margin: 1.5rem 0;
+  border-radius: calc(5px + 0.5rem);
+  background-color: rgba(128, 128, 128, 0.252);
+}
+#shimmer-card #image {
+  width: 100%;
+  border: 4px solid whitesmoke;
+  height: 150px;
+  border-radius: 0.3rem;
+  border: 2px solid white;
+}
+#shimmer-card #restroName {
+  border-radius: 0.3rem;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border: 2px solid white;
+}
+#shimmer-card #areaName {
+  margin-top: 10px;
+  border-radius: 0.3rem;
+  width: 100%;
+  border: 2px solid white;
+  height: 30px;
+}
+#shimmer-card #average-container {
+  width: 100%;
+  border-radius: 0.3rem;
+  margin-top: 10px;
+  height: 70px;
+  border: 2px solid white;
+  padding: 10px;
+}
+#shimmer-card #cuisines {
+  margin: 0;
+  width: 100%;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 0.3rem;
+}
+#shimmer-card #averageRating {
+  margin-top: 5px;
+  width: 100%;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 0.3rem;
+}
+#shimmer-menu {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  #shimmer-nav-link a {
+    display: none;
+  }
+  #shimmer-menu {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 0.3rem;
+    border: 2px solid white;
+    margin-right: 20px;
+  }
+  #shimmer-search #shimmer-input {
+    width: 80%;
+  }
+  #restroshimmer-cards {
+    justify-content: center;
+  }
+}

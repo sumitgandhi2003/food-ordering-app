@@ -1,0 +1,98 @@
+.rest-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 100%;
+  height: 100%; */
+  padding: 10px;
+}
+.rescard-item-detail {
+  display: flex;
+  margin: 20px 0;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--black);
+  gap: 10px;
+  width: 100%;
+}
+.rest-menu-items {
+  width: 100%;
+  border-bottom: 2rem solid var(--lightgrey);
+  border-radius: 20px;
+  padding: 20px;
+}
+.rest-detail {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+.rest-name {
+  margin: 5px 0;
+}
+.rest-cuisines,
+.rest-address {
+  color: var(--grey);
+}
+.rest-menu {
+  width: 70%;
+}
+.rescard-item-detail:nth-last-child(1) {
+  border-bottom: none;
+}
+.rest-menu-item-detail {
+  width: 80%;
+  padding: 10px;
+}
+.rest-menu-item-name {
+  font-size: 1.2rem;
+  width: 100%;
+}
+.title {
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.rest-menu-item-description {
+  margin-top: 10px;
+  appearance: none;
+  font-size: 1rem;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--grey);
+  text-align: justify;
+}
+.rest-menu-item-image {
+  width: calc(100% - 80%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rest-rating-detail {
+  width: 100px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px var(--black);
+}
+.add-to-cart {
+  position: relative;
+  bottom: 20px;
+}
+.rest-menu-item-image img {
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 2/1.5;
+  object-fit: cover;
+}
+@media screen and (max-width: 600px) {
+  .rest-menu-item-description {
+    font-size: 0.5rem;
+  }
+}
