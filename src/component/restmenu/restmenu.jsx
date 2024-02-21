@@ -1,4 +1,4 @@
-// import { restMenuItemImage } from "../../utility/constants";
+import { restMenuItemImage } from "../../utility/constants";
 import RestItemConainer from "../restItemContainer/RestItemContainer";
 import useRestMenu from "../../utility/useRestMenu";
 // import Button from "../button/button";
