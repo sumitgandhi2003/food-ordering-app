@@ -1,5 +1,7 @@
-import { restMenuItemImage } from "../../utility/constants";
-import RestItemConainer from "../restItemContainer/RestItemContainer";
+// import { restMenuItemImage } from "../../utility/constants";
+import RestItemConainer, {
+  Categorieswise,
+} from "../restItemContainer/RestItemContainer";
 import useRestMenu from "../../utility/useRestMenu";
 // import Button from "../button/button";
 import { useParams } from "react-router-dom";
@@ -14,7 +16,8 @@ const RestMenu = () => {
   const isOnline = useOnlineStatus();
   let count = 1;
   const handleClick = () => {
-    setShowItems(showItems ? false : true);
+    console.log("click");
+    setShowItems(!showItems ? true : false);
   };
   const restDetails = restMenu
     ? restMenu?.data.cards.filter((item) =>
@@ -30,6 +33,12 @@ const RestMenu = () => {
     restMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (cate) => cate?.card?.card?.["@type"].includes("ItemCategory")
     );
+  // console.log(category);
+  // console.log(category?.card?.card?.categories);
+  // category &&
+  //   category.map((item) => {
+  //     console.log(item?.card?.card?.categories);
+  //   });
   // const category = restMenu?.data?.cards.filter((item) => {
   //   return item?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((cate) =>
   //     cate?.card?.card?.["@type"].includes("ItemCategory")
@@ -52,7 +61,6 @@ const RestMenu = () => {
               <h2 className="rest-name">{name}</h2>
               <p className="rest-cuisines">{cuisines.join(", ")}</p>
               <p className="rest-address">{areaName}</p>
-              <p>id:{id}</p>
             </div>
             <div
               className={`${
@@ -67,6 +75,7 @@ const RestMenu = () => {
 
           <div className="recommended-menu-items my-14">
             {category.map((item) => {
+              // console.log(item?.card?.card?.categories?.length);
               return (
                 <div key={count++} className="rest-menu-items">
                   <div
@@ -75,58 +84,24 @@ const RestMenu = () => {
                   >
                     <div className="font-bold text-lg">
                       {item?.card?.card?.title} (
-                      {item?.card?.card?.itemCards.length})
+                      {item?.card?.card?.itemCards?.length ||
+                        item?.card?.card?.categories?.length}
+                      )
                     </div>
                     <div className="flex justify-center items-center w-14 h-14 mr-7">
                       <i class="fa-solid fa-angle-down text-2xl"></i>
                     </div>
                   </div>
-
-                  {item?.card?.card?.itemCards.map((item) => {
-                    return (
-                      showItems && <RestItemConainer item={item} />
-                      // <div
-                      //   className="rescard-item-detail"
-                      //   key={item?.card?.info?.id}
-                      // >
-                      //   <div className="rest-menu-item-detail">
-                      //     <h2 className="rest-menu-item-name">
-                      //       {item?.card?.info?.name}
-                      //     </h2>
-                      //     <p className="rest-menu-item-price">
-                      //       ₹
-                      //       {(item?.card?.info?.price ||
-                      //         item?.card?.info?.defaultPrice) / 100}
-                      //     </p>
-                      //     <p className="rest-menu-item-description">
-                      //       {item?.card?.info?.description}
-                      //     </p>
-                      //   </div>
-                      //   <div className="rest-menu-item-image">
-                      //     <img
-                      //       src={
-                      //         restMenuItemImage + item?.card?.info?.imageId
-                      //       }
-                      //       alt=""
-                      //     />
-                      //     <div className="add-to-cart">
-                      //       <Button
-                      //         id="add-to-cart-btn"
-                      //         ButtonText="Add To Cart"
-                      //         onClick={() => {
-                      //           const isLogin = JSON.parse(
-                      //             localStorage.getItem("isLogin")
-                      //           );
-                      //           isLogin
-                      //             ? console.log(item?.card?.info?.name)
-                      //             : alert("Please Login first");
-                      //         }}
-                      //       />
-                      //     </div>
-                      //   </div>
-                      // </div>
-                    );
-                  })}
+                  <div>
+                    {item?.card?.card?.itemCards
+                      ? item?.card?.card?.itemCards?.map((item) => {
+                          return showItems && <RestItemConainer item={item} />;
+                        })
+                      : item?.card?.card?.categories?.map((item) => {
+                          // console.log(item.title);
+                          return showItems && <Categorieswise item={item} />;
+                        })}
+                  </div>
                 </div>
               );
             })}

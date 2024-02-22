@@ -17,9 +17,13 @@
 }
 .rest-menu-items {
   width: 100%;
-  border-bottom: 2rem solid var(--lightgrey);
-  border-radius: 20px;
+  border-bottom: 2px solid var(--lightgrey);
+  border-radius: 1rem;
   padding: 20px;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 .rest-detail {
   width: 100%;
@@ -31,6 +35,9 @@
 }
 .rest-name {
   margin: 5px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .rest-cuisines,
 .rest-address {

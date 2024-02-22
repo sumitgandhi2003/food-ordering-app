@@ -1,8 +1,7 @@
 import { restMenuItemImage } from "../../utility/constants";
 import Button from "../button/button";
-// import { useState } from "react";
+import { useState } from "react";
 const RestItemConainer = ({ item }) => {
-  console.log(item);
   return (
     <div className="rescard-item-detail" key={item?.card?.info?.id}>
       <div className="rest-menu-item-detail">
@@ -29,6 +28,34 @@ const RestItemConainer = ({ item }) => {
           />
         </div>
       </div>
+    </div>
+  );
+};
+
+export const Categorieswise = ({ item }) => {
+  const [showItems, setShowItems] = useState(false);
+  const handleClick = () => {
+    setShowItems(!showItems);
+  };
+  const { title, itemCards } = item;
+  // console.log(item);
+  // console.log(itemCards);
+  return (
+    <div className="rest-menu-items">
+      <div
+        className="title flex justify-between scroll-smooth"
+        onClick={handleClick}
+      >
+        <div className="font-bold text-lg">
+          {title} ({itemCards?.length})
+        </div>
+        <div className="flex justify-center items-center w-14 h-14 mr-7">
+          <i class="fa-solid fa-angle-down text-2xl"></i>
+        </div>
+      </div>
+      {itemCards?.map((item) => {
+        return showItems && <RestItemConainer item={item} />;
+      })}
     </div>
   );
 };
