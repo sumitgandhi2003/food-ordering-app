@@ -1,4 +1,5 @@
 import { restMenuItemImage } from "../../utility/constants";
+import Swal from "sweetalert2";
 import Button from "../button/button";
 import { useState } from "react";
 export const cart = [];
@@ -32,6 +33,14 @@ const RestItemConainer = ({ item }) => {
               isLogin
                 ? (cart[cart.length] = item)
                 : alert("Please Login first");
+              if (isLogin)
+                Swal.fire({
+                  title: "Added to Cart",
+                  text: "Your item has been added to cart",
+                  icon: "success",
+                  confirmButtonText: "Ok",
+                  position: "center",
+                });
               console.log(cart);
             }}
           />
