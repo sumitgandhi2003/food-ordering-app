@@ -1,6 +1,7 @@
 import { restMenuItemImage } from "../../utility/constants";
 import Button from "../button/button";
 import { useState } from "react";
+export const cart = [];
 const RestItemConainer = ({ item }) => {
   return (
     <div className="rescard-item-detail" key={item?.card?.info?.id}>
@@ -29,8 +30,9 @@ const RestItemConainer = ({ item }) => {
             onClick={() => {
               const isLogin = JSON.parse(localStorage.getItem("isLogin"));
               isLogin
-                ? console.log(item?.card?.info?.name)
+                ? (cart[cart.length] = item)
                 : alert("Please Login first");
+              console.log(cart);
             }}
           />
         </div>

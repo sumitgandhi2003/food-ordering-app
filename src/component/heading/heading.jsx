@@ -30,7 +30,7 @@ const Heading = ({ login }) => {
             <Link to="/contact"> Contact US </Link>
           </li>
           <li>
-            <Link>Cart</Link>
+            <Link to="/cart">Cart</Link>
           </li>
           <Button
             className="login-btn"

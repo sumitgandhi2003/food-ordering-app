@@ -4,6 +4,7 @@ import Loader from "./component/loader/Loader";
 import Error from "./component/error/Error";
 import Login from "./component/login/login";
 import { useState, lazy, Suspense } from "react";
+import Cartitems from "./component/Cartitems/Cartitems";
 import "./App.css";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 const About = lazy(() => import("./component/about/About"));
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/cart",
+        element: <Cartitems />,
       },
     ],
     errorElement: <Error />,
