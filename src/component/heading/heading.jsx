@@ -16,7 +16,9 @@ const Heading = ({ login }) => {
   return (
     <div className="nav-bar">
       <div id="logo-img">
-        <img src={logo} alt="" />
+        <Link to="/">
+          <img src={logo} alt="" />
+        </Link>
       </div>
       <ul id="nav-link">
         <div id="nav-link-items">
