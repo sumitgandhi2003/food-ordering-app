@@ -32,13 +32,17 @@ const RestItemConainer = ({ item }) => {
               const isLogin = JSON.parse(localStorage.getItem("isLogin"));
               isLogin
                 ? (cart[cart.length] = item)
-                : alert("Please Login first");
+                : Swal.fire({
+                    title: "Login",
+                    text: "Please Login first",
+                    icon: "warning",
+                    confirmButtonText: "Ok",
+                  });
               if (isLogin)
                 Swal.fire({
                   title: "Added to Cart",
                   text: "Your item has been added to cart",
                   icon: "success",
-                  confirmButtonText: "Ok",
                   position: "center",
                 });
               console.log(cart);
