@@ -28,6 +28,7 @@ const Body = () => {
                         return res?.info?.avgRating >= 4;
                     });
                     setFilterList(filteredList);
+                    if
                 }}
             />
             <div id="rescard">
