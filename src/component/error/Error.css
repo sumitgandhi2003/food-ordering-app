@@ -1,22 +1,22 @@
 #error-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* #error {
   margin-top: 100px;
 } */
 
 .error-heading {
-  font-size: 6rem;
-  margin-bottom: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 6rem;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .error-des {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 .error-body {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }

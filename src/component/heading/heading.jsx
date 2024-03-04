@@ -6,58 +6,60 @@ import Button from "../button/button";
 import { Link } from "react-router-dom";
 
 const Heading = ({ login }) => {
-  const [btnName, setBtnName] = useState("Login");
-  const [isLogin, setIsLogin] = login;
+    const [btnName, setBtnName] = useState("Login");
+    const [isLogin, setIsLogin] = login;
 
-  useEffect(() => {
-    localStorage.setItem("isLogin", isLogin);
-  }, [isLogin]);
+    useEffect(() => {
+        localStorage.setItem("isLogin", isLogin);
+    }, [isLogin]);
 
-  return (
-    <div className="nav-bar">
-      <div id="logo-img">
-        <Link to="/">
-          <img src={logo} alt="" />
-        </Link>
-      </div>
-      <ul id="nav-link">
-        <div id="nav-link-items">
-          <li>
-            <Link to="/"> Home </Link>
-          </li>
-          <li>
-            <Link to="/about"> About Us </Link>
-          </li>
-          <li>
-            <Link to="/contact"> Contact US </Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-          <Button
-            className="login-btn"
-            ButtonText={btnName}
-            onClick={() => {
-              setIsLogin(isLogin ? false : true);
-              setBtnName(btnName === "Login" ? "Logout" : "Login");
-            }}
-          />
+    return (
+        <div className="nav-bar">
+            <div id="logo-img">
+                <Link to="/">
+                    <img src={logo} alt="" />
+                </Link>
+            </div>
+            <ul id="nav-link">
+                <div id="nav-link-items">
+                    <li>
+                        <Link to="/"> Home </Link>
+                    </li>
+                    <li>
+                        <Link to="/about"> About Us </Link>
+                    </li>
+                    <li>
+                        <Link to="/contact"> Contact US </Link>
+                    </li>
+                    <li>
+                        <Link to="/cart">Cart</Link>
+                    </li>
+                    <Button
+                        className="login-btn"
+                        ButtonText={btnName}
+                        onClick={() => {
+                            setIsLogin(isLogin ? false : true);
+                            setBtnName(
+                                btnName === "Login" ? "Logout" : "Login"
+                            );
+                        }}
+                    />
+                </div>
+                <div
+                    id="menu"
+                    // onClick={() => {
+                    //   document.getElementById("nav-link-items").style.left = 0;
+                    //   document
+                    //     .querySelector("#menu i")
+                    //     .classList.replace("fa-bars", "fa-xmark");
+                    // }}
+                >
+                    {/* <i class="fa-solid fa-bars"></i> */}
+                    <img src={menu} alt="menu" />
+                </div>
+            </ul>
         </div>
-        <div
-          id="menu"
-          // onClick={() => {
-          //   document.getElementById("nav-link-items").style.left = 0;
-          //   document
-          //     .querySelector("#menu i")
-          //     .classList.replace("fa-bars", "fa-xmark");
-          // }}
-        >
-          {/* <i class="fa-solid fa-bars"></i> */}
-          <img src={menu} alt="menu" />
-        </div>
-      </ul>
-    </div>
-  );
+    );
 };
 
 export default Heading;

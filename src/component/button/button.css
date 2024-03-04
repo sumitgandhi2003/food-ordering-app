@@ -1,39 +1,39 @@
 button {
-  width: max-content;
-  height: max-content;
-  padding: 10px;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  background-color: var(--orenge);
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-left: 20px;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: var(--orenge);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 20px;
 }
 .login-btn {
-  width: 100px;
-  aspect-ratio: 2/1;
+    width: 100px;
+    aspect-ratio: 2/1;
 }
 #error-btn {
-  width: max-content;
-  padding: 10px;
-  margin-top: 30px;
+    width: max-content;
+    padding: 10px;
+    margin-top: 30px;
 }
 #add-to-cart-btn {
-  /* width: max-content; */
-  /* position: relative;
+    /* width: max-content; */
+    /* position: relative;
   bottom: 30px; */
-  margin: 0;
+    margin: 0;
 }
 
 @media screen and (max-width: 600px) {
-  button {
-    width: 20%;
-  }
+    button {
+        width: 20%;
+    }
 }
 @media screen and (max-width: 730px) {
-  .login-btn {
-    width: 100px;
-    margin: 0;
-  }
+    .login-btn {
+        width: 100px;
+        margin: 0;
+    }
 }
