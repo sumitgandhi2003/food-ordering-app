@@ -11,6 +11,7 @@ const About = () => {
                         <a
                             href="https://www.ecb.ac.in"
                             rel="noreferrer"
+                            className=" text-[#1B1F3B] font-bold"
                             target="_blank"
                         >
                             Engineering College Bikaner
