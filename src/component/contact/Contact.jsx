@@ -19,10 +19,10 @@ const Contact = () => {
         e.preventDefault();
     };
     return (
-        <div className="contact-us-container w-full h-full flex justify-center items-center p-4 mt-2 bg-pink-200">
+        <div className="contact-us-container w-full h-full flex justify-center items-center p-4 mt-2 bg-[#FFFAFF]">
             <form
                 onSubmit={submithandle}
-                className="contact w-[600px] h-fit p-8 flex gap-10 flex-col justify-between items-center bg-white rounded-xl shadow-black"
+                className="contact w-[600px] h-fit p-8 flex gap-5 flex-col justify-between items-center bg-white rounded-xl shadow-lg"
             >
                 <div className="container-heading w-full">
                     <h1 className="text-3xl font-bold font- from-neutral-500">
@@ -32,7 +32,7 @@ const Contact = () => {
                         Feel free to drop us a line below!
                     </p>
                 </div>
-                <div className="form grid gap-5 w-full">
+                <div className="form grid gap-5 w-full relative">
                     <input
                         type="text"
                         className="bg-gray-200 p-2 rounded-md text-lg"
@@ -55,14 +55,14 @@ const Contact = () => {
                         name="message"
                         id=""
                         className="bg-gray-200 p-2 rounded-md w-full h-[200px] text-lg resize-none "
-                        placeholder="Typing Your Message here"
+                        placeholder="Enter your Message here"
                         value={contact.message}
                         onChange={inputHandle}
                     ></textarea>
-                    <div className="btn">
+                    <div className="btn w-full flex  justify-end ">
                         <Button
                             ButtonText="Submit"
-                            className="bg-red-800 text-white w-fit m-0"
+                            className=" text-[#FFFAFF] w-fit bg-[#1B1F3B] "
                             onClick={() => {
                                 if (
                                     contact.email.includes("@") &&
