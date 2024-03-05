@@ -9,6 +9,7 @@ import useOnlineStatus from "../../utility/useOnlineStatus.js";
 const reponse = await fetchApi();
 const Body = () => {
     const isOnline = useOnlineStatus();
+    // const [isFilter, setIsFilter] = useState(false);
     const [restList, setRestList] = useState([]);
     const [filterList, setFilterList] = useState([]);
     useEffect(() => {
