@@ -37,7 +37,7 @@ To use the Food Ordering App, you need:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/food-ordering-app.git
+   git clone https://github.com/sumitgandhi2003/food-ordering-app.git
    ```
 
 2. Navigate to the project directory:
@@ -74,9 +74,3 @@ To use the Food Ordering App, you need:
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to create a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-```
-
-Remember to replace placeholder information such as "your-username" with your actual GitHub username. Feel free to customize the README further based on your specific project details.
