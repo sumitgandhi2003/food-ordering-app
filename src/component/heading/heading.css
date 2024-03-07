@@ -46,11 +46,6 @@ Link {
     font-size: xx-large;
 }
 @media screen and (max-width: 730px) {
-    /* #nav-link {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-  } */
     #nav-link #nav-link-items {
         text-align: center;
         display: block;
@@ -63,8 +58,6 @@ Link {
         background-color: white;
         border-radius: 5px;
         transition: all 1s ease-in-out;
-
-        /* display: none; */
     }
     #nav-link #nav-link-items li {
         border-bottom: 1px solid black;

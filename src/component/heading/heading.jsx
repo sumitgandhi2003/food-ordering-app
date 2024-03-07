@@ -45,16 +45,7 @@ const Heading = ({ login }) => {
                         }}
                     />
                 </div>
-                <div
-                    id="menu"
-                    // onClick={() => {
-                    //   document.getElementById("nav-link-items").style.left = 0;
-                    //   document
-                    //     .querySelector("#menu i")
-                    //     .classList.replace("fa-bars", "fa-xmark");
-                    // }}
-                >
-                    {/* <i class="fa-solid fa-bars"></i> */}
+                <div id="menu">
                     <img src={menu} alt="menu" />
                 </div>
             </ul>

@@ -64,8 +64,7 @@ export const Categorieswise = ({ item }) => {
         setShowItems(!showItems);
     };
     const { title, itemCards } = item;
-    // console.log(item);
-    // console.log(itemCards);
+
     return (
         <div className="rest-menu-items">
             <div

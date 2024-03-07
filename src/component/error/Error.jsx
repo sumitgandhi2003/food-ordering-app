@@ -12,7 +12,6 @@ const Error = () => {
                 <p className="error-des">
                     {err.status + " URL " + err.statusText}
                 </p>
-                {/* <button>Go To Homepage</button> */}
                 <Link to={"/"}>
                     <Button
                         ButtonText={"Go To Homepage"}
